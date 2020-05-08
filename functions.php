@@ -10,7 +10,7 @@ require_once(dirname(__FILE__)."/common/lib/mobile_detect.php");
 require get_template_directory() . '/inc/general.php';
 
 // updatechecker
-// require get_template_directory() . '/inc/update-checker.php';
+require get_template_directory() . '/inc/update-checker.php';
 
 // JS
 require get_template_directory() . '/inc/enqueue.php';
