@@ -1,5 +1,5 @@
 $(function () {
-	var $slider = $(".slider"),
+	var $slider = $(".g__slide"),
 		$slider_nav_container = $(".slider-nav-container"),
 		$slider_nav = $(".slider-nav");
 	$slider_nav.append($slider.contents().clone());

@@ -18,7 +18,7 @@ $nextpost = get_adjacent_post(false, '', true);
       <div class="entry-thumbs">
         <?php
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if(is_plugin_active( 'smart-custom-fields/smart-custom-fields.php ' )){
+        if(is_plugin_active( 'smart-custom-fields/smart-custom-fields.php' )){
           $gallery = SCF::get('slider');
         } else {
           $gallery[0]['gallery_item'] = '';
