@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+html,
+body {
+	color: #fff;
+	background: #262626 none;
+}
+.site-content {
+	background-color: #262626;
+}
+/*=====================================
+site-header
+=====================================*/
+.home .site-header {
+	background-color: #333333;
+}
+.header-btm {
+	color: #fff;
+}
+@media screen and (min-width: 960px) {
+	.linkbtn:hover,
+	.sharebtn-list > li > a:hover {
+		background-color: #dbdbdb;
+		color: #222;
+	}
+	.main-navigation .menu-item.current-post-ancestor::before,
+	.main-navigation .menu-item.current-menu-item::before,
+	.main-navigation .menu-item:hover::before {
+		background-color: #fff;
+	}
+	.main-navigation .menu-item.current-post-ancestor a,
+	.main-navigation .menu-item.current-menu-item a,
+	.main-navigation .menu-item:hover a {
+		color: #222;
+	}
+}
+/*=====================================
+linkbtn
+=====================================*/
+.linkbtn {
+	border-color: #fff;
+}

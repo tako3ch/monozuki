@@ -1,0 +1,1 @@
+<?php/* sidebar is none. */?>
