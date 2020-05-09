@@ -18,6 +18,10 @@ DIY
 
 # version
 
+### v0.0.5
+
+- [fixed] Nanka iroiro naoshita.
+
 ### v0.0.3
 
 - [release] open...
