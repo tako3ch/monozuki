@@ -23,7 +23,6 @@ $nextpost = get_adjacent_post(false, '', true);
         } else {
           $gallery[0]['gallery_item'] = '';
         }
-        // var_dump($gallery);
         if ($gallery[0]['gallery_item'] != '') {
           echo '<ul class="g__slide">';
           foreach ($gallery as $gallery_id) {

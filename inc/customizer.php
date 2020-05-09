@@ -26,6 +26,22 @@ function mnzk_design_register($wp_customize) {
 			'yami' => 'yami',
 		)
 	));
+	// color_change
+	$wp_customize->add_setting('mnzk_logosize', array(
+		'type' => 'option',
+		'default'   => 'default',
+	));
+	$wp_customize->add_control( 'mnzk_logosize', array(
+		'settings' => 'mnzk_logosize',
+		'label' => 'ロゴサイズ変更(max400px)',
+		'section' => 'mnzk_design_sec',
+		'type'       => 'radio',
+		'choices'    => array(
+			'small' => 'Small',
+			'default' => 'Normal',
+			'big' => 'Big',
+		)
+	));
 }
 add_action( 'customize_register', 'mnzk_design_register' );
 

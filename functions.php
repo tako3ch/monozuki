@@ -16,7 +16,7 @@ require get_template_directory() . '/inc/update-checker.php';
 require get_template_directory() . '/inc/enqueue.php';
 
 // blockeditor
-require get_template_directory() . '/inc/blockeditor.php';
+// require get_template_directory() . '/inc/blockeditor.php';
 
 // ページネーション
 require get_template_directory() . '/inc/pagination.php';

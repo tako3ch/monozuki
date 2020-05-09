@@ -25,7 +25,20 @@
 				break;
 		}
 	}
-
+	$logosize = 'logosize__df';
+	if(get_option('mnzk_logosize')){
+		switch (get_option('mnzk_logosize')) {
+			case 'small':
+				$logosize = 'logosize__sm';
+				break;
+			case 'big':
+				$logosize = 'logosize__big';
+				break;
+			default:
+				$logosize = 'logosize__df';
+				break;
+		}
+	}
 	?>
 	<?php wp_head(); ?>
 	<?php if(get_option('mnzk_tag_txt')): echo get_option('mnzk_tag_txt'); endif;?>
@@ -36,7 +49,7 @@
 	<div class="overlay"></div>
 	<header id="masthead" class="site-header">
 		<div class="header-in">
-			<div class="site-branding">
+			<div class="site-branding <?php echo $logosize;?>">
 				<?php if (has_custom_logo()) {the_custom_logo();}else{if ( is_front_page() && is_home() ) :?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php else : ?>
