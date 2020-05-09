@@ -113,20 +113,23 @@ class Walker_Nav_TopPage extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth = 0, $args = Array(), $id = 0) {
 
 		if ($item->type == 'taxonomy' && $item->object == 'category') {
-			$obj_ttl = $item->title;
-			echo '<div class="toppage-cat-area"><h2 class="blogger_ttl"><span>'.$obj_ttl.'</span></h2><div class="entry-list">';
 			$obj_id = $item->object_id;
 			$args = array( 'posts_per_page' => 8, 'cat' => $obj_id );
 			$cat_link = get_category_link( $obj_id );
 			$wp_query = new WP_Query($args);
-			if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) :
+
+			if ( $wp_query->have_posts() ) :
+				$obj_ttl = $item->title;
+				echo '<div class="toppage-cat-area"><h2 class="blogger_ttl"><span>'.$obj_ttl.'</span></h2><div class="entry-list">';
+				while ( $wp_query->have_posts() ) :
 				$wp_query->the_post();
 				include locate_template( 'tpl/newslist-item.php' );
 			endwhile;
-			endif;
 			echo '</div>';
 			echo '<div class="linkbtn-wrp"><a class="linkbtn" href="'.$cat_link.'">MORE</a></div>';
 			echo '</div>';
+
+			endif;
 		}else{
 			return;
 		}

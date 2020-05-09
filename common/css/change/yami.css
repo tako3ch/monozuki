@@ -8,14 +8,23 @@ body {
 .site-content {
 	background-color: #262626;
 }
+.entry-thumbs {
+	box-shadow: 0 20px #262626;
+}
 /*=====================================
 site-header
 =====================================*/
 .home .site-header {
 	background-color: #333333;
 }
+/*=====================================
+basic
+=====================================*/
 .header-btm {
 	color: #fff;
+}
+.ham__menu-item {
+	background-color: #fff;
 }
 @media screen and (min-width: 960px) {
 	.linkbtn:hover,
