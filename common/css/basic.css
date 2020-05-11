@@ -1143,15 +1143,19 @@ input:not([type="checkbox"]):not([type="radio"]).searchtxt {
 }
 /*============= #rinker =============*/
 .yyi-rinker-contents {
-  width: calc(100% - 2em);
-  margin: 3em auto;
-  background-color: #fff;
-  border: 1px solid #888;
+  width: 100%;
+  box-shadow: none !important;
 }
-.yyi-rinker-image {
-  padding: 10px;
-  text-align: center;
+div.yyi-rinker-contents div.yyi-rinker-box {
+  display: block !important;
 }
+div.yyi-rinker-contents div.yyi-rinker-image {
+  margin: 0 auto;
+}
+div.yyi-rinker-contents div.yyi-rinker-info {
+  width: 100% !important;
+}
+/* ------ option ------ */
 .yyi-rinker-tracking {
   display: inline-block;
 }
@@ -1159,7 +1163,7 @@ input:not([type="checkbox"]):not([type="radio"]).searchtxt {
   margin: 0;
 }
 .yyi-rinker-info {
-  padding-bottom: 10px;
+  padding: 10px 0 0;
 }
 .yyi-rinker-title .yyi-rinker-tracking {
   padding: 0 10px 0;
@@ -1176,41 +1180,32 @@ input:not([type="checkbox"]):not([type="radio"]).searchtxt {
   align-items: flex-start;
   -webkit-box-pack: start;
   justify-content: flex-start;
+  padding-left: 0 !important;
   padding: 0 10px 10px;
   font-size: 0.85em;
   color: #444;
   line-height: 1.4;
 }
 .yyi-rinker-links {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
+  display: -webkit-box !important;
+  display: flex !important;
   -webkit-box-align: start;
   align-items: flex-start;
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 0 10px;
   font-size: 0.8em;
+  margin: 0 !important;
+  flex-direction: row !important;
 }
 .entry-content .yyi-rinker-links > li {
   width: 32.1%;
-  height: 30px;
-  list-style: none;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 .yyi-rinker-links > li > a {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #ccc;
-  border-radius: 3px;
-  font-weight: bold;
   text-align: center;
+  padding: 0px !important;
 }
 .yyi-rinker-link {
   color: #fff;
@@ -1223,7 +1218,7 @@ input:not([type="checkbox"]):not([type="radio"]).searchtxt {
 }
 .yyi-rinker-links .yahoolink > a {
   background-color: #410093;
-  font-size: 0.8em;
+  font-size: 0.8em !important;
   letter-spacing: -0.03em;
 }
 
@@ -1818,63 +1813,38 @@ input:not([type="checkbox"]):not([type="radio"]).wpcf7-submit {
     opacity: 0.7;
     cursor: pointer;
   }
-
-  /*============= #breadcrumb =============*/
-  .breadcrumb-item a:hover {
-    text-decoration: none;
-  }
-
   /*============= #rinker =============*/
-  .yyi-rinker-contents {
-    width: calc(100% - 6em);
+  div.yyi-rinker-contents div.yyi-rinker-box {
+    display: flex !important;
   }
-
-  .yyi-rinker-box {
-    display: -webkit-box;
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
+  div.yyi-rinker-contents div.yyi-rinker-info {
+    width: calc(100% - 175px) !important;
+    padding: 0 0 0 10px;
   }
-
-  .yyi-rinker-image {
-    width: 35%;
-  }
-
-  .yyi-rinker-info {
-    width: 65%;
-    padding: 10px;
-  }
-
   .yyi-rinker-links,
   .yyi-rinker-title .yyi-rinker-tracking {
     padding: 0;
   }
-
-  .yyi-rinker-detail {
-    padding: 0 0 10px;
-  }
-
-  .yyi-rinker-links > li > a {
-    border: 1px solid #888;
-  }
-
   .yyi-rinker-links .amazonlink > a {
-    border-color: #f90;
+    border: 1px solid #f90;
   }
-
   .yyi-rinker-links .rakutenlink > a {
-    border-color: #bf0000;
+    border: 1px solid #bf0000;
   }
-
   .yyi-rinker-links .yahoolink > a {
-    border-color: #410093;
+    border: 1px solid #410093;
   }
-
   .yyi-rinker-links > li > a:hover {
     background-color: #fff;
+  }
+  .yyi-rinker-links .amazonlink > a:hover {
+    color: #f90;
+  }
+  .yyi-rinker-links .rakutenlink > a:hover {
+    color: #bf0000;
+  }
+  .yyi-rinker-links .yahoolink > a:hover {
+    color: #410093;
   }
   /*============= #sharebtn =============*/
   .sharebtn-list > li > a:hover {
@@ -1888,27 +1858,22 @@ input:not([type="checkbox"]):not([type="radio"]).wpcf7-submit {
     width: auto;
     height: auto;
   }
-
   .go_top > a > span::before,
   .go_top > a > span::after {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-
   .go_top > a:hover > span::before {
     top: -5px;
   }
-
   .go_top > a:hover > span::after {
     -webkit-transform: scaleX(1.5);
     transform: scaleX(1.5);
   }
-
   /*============= #footer =============*/
   #footer {
     height: 160px;
   }
-
   .footer-in {
     display: -webkit-box;
     display: flex;
