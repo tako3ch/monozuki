@@ -16,17 +16,10 @@ $nextpost = get_adjacent_post(false, '', true);
   <div class="contents-area single-area">
     <main id="main" class="site-main">
       <div class="entry-thumbs">
-        <?php
-        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if(is_plugin_active( 'smart-custom-fields/smart-custom-fields.php' )){
-          $gallery = SCF::get('slider');
-        } else {
-          $gallery[0]['gallery_item'] = '';
-        }
+        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); if(is_plugin_active( 'smart-custom-fields/smart-custom-fields.php' )){ $gallery = SCF::get('slider'); } else { $gallery[0]['gallery_item'] = ''; }
         if ($gallery[0]['gallery_item'] != '') {
           echo '<ul class="g__slide">';
           foreach ($gallery as $gallery_id) {
-            // var_dump($gallery_id['gallery_item']);
             $gallery_thumb_id = $gallery_id['gallery_item'];
             $gallery_thumb = wp_get_attachment_image_src( $gallery_thumb_id , 'full' );
             if(!empty($gallery_thumb)) $gallery_thumb = $gallery_thumb[0];
@@ -37,11 +30,9 @@ $nextpost = get_adjacent_post(false, '', true);
           $post_thumb_id = get_post_thumbnail_id($post_id);
           $post_thumb = wp_get_attachment_image_src( $post_thumb_id , 'full' );
           if(!empty($post_thumb)){ $hero_img = $post_thumb[0]; }
-          ?>
-          <img class="entry-thumb__img" src="<?php echo $hero_img;?>" alt="">
-          <?php
-        }
         ?>
+        <img class="entry-thumb__img" src="<?php echo $hero_img;?>" alt="">
+        <?php } ?>
       </div>
       <div class="entry-page">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -51,14 +42,11 @@ $nextpost = get_adjacent_post(false, '', true);
           <div class="slider-nav-container">
             <div class="slider-nav"></div>
           </div>
-          <?php
-          // Ad
+          <?php // Ad
           $addisp_head = '';
           $addisp_head_sp = '';
-
           $addisp_head = get_option('hakushi_addisp_head');
           $addisp_head_sp = get_option('hakushi_addisp_head_sp');
-
           if ($addisp_head != '' && DEVICE == 'PC') {
             echo '<div class="ad_block">' . $addisp_head . '</div>';
           } elseif ($addisp_head_sp != '' && DEVICE == 'SP') {
@@ -81,37 +69,22 @@ $nextpost = get_adjacent_post(false, '', true);
               </ul>
           </div><!-- /.breadcrumb -->
 
-          <!-- hakushi_addisp_related -->
-          <?php
-          // Ad
-          $addisp_related = '';
-          $addisp_related = get_option('hakushi_addisp_related');
-          if ($addisp_related != '') {
-            echo '<div class="ad_block">' . $addisp_related . '</div>';
-          }?>
+          <!-- mnzk_addisp_related -->
+          <?php // Ad
+          $addisp_related = ''; $addisp_related = get_option('hakushi_addisp_related');
+          if ($addisp_related != '') { echo '<div class="ad_block">' . $addisp_related . '</div>'; }?>
 
           <div class="entry-tags">
-            <?php
-            if (get_the_tag_list()) {
-              echo get_the_tag_list('<ul class="taglist"><li>', '</li><li>', '</li></ul>');
-            }
-            ?>
+            <?php if (get_the_tag_list()) { echo get_the_tag_list('<ul class="taglist"><li>', '</li><li>', '</li></ul>'); } ?>
           </div>
           <?php
           $addisp_snstop = '';
           $addisp_snstop_sp = '';
           $addisp_snstop = get_option('hakushi_addisp_snstop');
           $addisp_snstop_sp = get_option('hakushi_addisp_snstop_sp');
-
-          if ($addisp_snstop != '' && DEVICE == 'PC') {
-            echo '<div class="ad_block">' . $addisp_snstop . '</div>';
-          } elseif ($addisp_snstop_sp != '' && DEVICE == 'SP') {
-            echo '<div class="ad_block">' . $addisp_snstop_sp . '</div>';
-          } ?>
-
+          if ($addisp_snstop != '' && DEVICE == 'PC') { echo '<div class="ad_block">' . $addisp_snstop . '</div>'; } elseif ($addisp_snstop_sp != '' && DEVICE == 'SP') { echo '<div class="ad_block">' . $addisp_snstop_sp . '</div>';} ?>
           <?php get_template_part('tpl/sharebtn', 'sharebtn'); ?>
 
-          <?php $pagerpost = 'default';$pagerpost = get_option('hakushi_news_under');if ($pagerpost == 'dis_on') { ?>
           <div class="pager-list">
               <div class="pager-item--prev">
                 <?php if (!empty($prevpost)): $id = $prevpost->ID; ?>
@@ -128,8 +101,6 @@ $nextpost = get_adjacent_post(false, '', true);
                 <?php endif; ?>
               </div><!-- next -->
           </div>
-          <?php } ?>
-
           <!-- comment -->
 
         </article><!-- #post-## -->
@@ -141,19 +112,9 @@ $nextpost = get_adjacent_post(false, '', true);
 <?php
 if (is_single()) :
   $publogo_img = '';
-  if (!is_null(get_option('hks_logo_url'))) {
-    $publogo_img = get_option('hks_logo_url');
-  }
   $pubogp_img = '';
-  if (is_singular() && has_post_thumbnail()) {
-    $ps_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-    $pubogp_img = $ps_thumb[0];
-  } elseif (get_option('hks_logo_url')) {
-    $pubogp_img = get_option('hks_logo_url');
-  } else {
-    $pubogp_img = get_template_directory_uri() . '/common/img/ogp.png';
-  }
-
+  if (!is_null(get_option('hks_logo_url'))) { $publogo_img = get_option('hks_logo_url'); }
+  if (is_singular() && has_post_thumbnail()) { $ps_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); $pubogp_img = $ps_thumb[0]; } elseif (get_option('hks_logo_url')) { $pubogp_img = get_option('hks_logo_url'); } else { $pubogp_img = get_template_directory_uri() . '/common/img/ogp.png'; }
   ?>
     <script type="application/ld+json">
     {
