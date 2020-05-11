@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 	<?php if(has_site_icon()){ echo '<link rel="shortcut icon" href="'.get_site_icon_url().'" />'; }else{ echo '<link rel="shortcut icon" href="'.get_template_directory_uri().'/common/img/favicon.png" />'; }?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/init.css" />
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/basic.css?v28" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/basic.css?v30" />
 	<?php
 	if(get_option('mnzk_chgcolor_txt')){
 		switch (get_option('mnzk_chgcolor_txt')) {

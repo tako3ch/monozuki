@@ -18,6 +18,12 @@ DIY
 
 # version
 
+### v0.1.2
+
+- [add] SearchForm
+- [fixed] CSS
+- [add] BlockBox
+
 ### v0.0.5
 
 - [fixed] Nanka iroiro naoshita.
