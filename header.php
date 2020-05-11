@@ -59,8 +59,12 @@
 			<?php if ( has_nav_menu( 'global-menu' ) || has_nav_menu( 'global-sub-menu' ) ) { ?>
 			<div class="header-btm">
 				<nav class="main-navigation">
+
+					<?php if(get_option('mnzk_searchbox') == 'show'){ echo get_search_form();}?>
 					<?php if ( has_nav_menu( 'global-menu' ) ) { wp_nav_menu( array( 'theme_location' => 'global-menu', 'menu_class' => '', 'container' => '', 'items_wrap' => '<ul class="hnav">%3$s</ul>' ) );}?>
 					<?php if ( has_nav_menu( 'global-sub-menu' ) ) { wp_nav_menu( array( 'theme_location' => 'global-sub-menu','menu_class' => '','container' => '', 'items_wrap' => '<ul class="hnav-sub">%3$s</ul>'));}?>
+					<!-- searchbox -->
+					<?php if(get_option('mnzk_searchbox') == 'show'){ echo '<div class="search__btn"><i class="icon-search"></i></div>';}?>
 				</nav><!-- #site-navigation -->
 			</div><!-- /.header-btm -->
 			<?php } ?>

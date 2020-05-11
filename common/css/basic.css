@@ -45,7 +45,6 @@ img {
     url("../fonts/icomoon.ttf?p9i5bv") format("truetype"),
     url("../fonts/icomoon.woff?p9i5bv") format("woff"),
     url("../fonts/icomoon.svg?p9i5bv#icomoon") format("svg");
-
   font-display: block;
 }
 [class^="icon-"],
@@ -53,18 +52,15 @@ img {
   font-weight: normal;
   font-style: normal;
   font-variant: normal;
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
   text-transform: none;
   line-height: 1;
-
   speak: none;
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-create:before {
-  content: "\e903";
+.icon-search:before {
+  content: "\e904";
 }
 .icon-keyboard_arrow_left:before {
   content: "\e901";
@@ -75,8 +71,11 @@ img {
 .icon-get-pocket:before {
   content: "\e900";
 }
-.icon-sphere:before {
-  content: "\e9c9";
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-quotes-left:before {
+  content: "\e977";
 }
 .icon-facebook:before {
   content: "\ea90";
@@ -229,7 +228,7 @@ textarea {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 110px 20px 30px;
+  padding: 130px 20px 30px;
   margin-top: 0;
   background-color: rgb(160 160 160 / 0.6);
   color: #fff;
@@ -272,6 +271,11 @@ textarea {
   margin: auto;
   background-color: #fff;
   content: "";
+}
+/* ------ option ------ */
+.main-navigation .icon-search,
+.search__close {
+  display: none;
 }
 /*============= #main =============*/
 #main {
@@ -391,33 +395,37 @@ textarea {
   margin-right: 15px;
 }
 /* ------ option ------ */
-.search-form {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-align: start;
-  align-items: flex-start;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
+.searchform {
+  position: relative;
+  margin-bottom: 20px;
 }
-.search-form .screen-reader-text {
-  display: none;
-}
-.search-form > label {
-  width: calc(100% - 90px);
-  height: 35px;
-  margin-right: 10px;
-}
-.search-form > label > input.search-field {
-  width: 100%;
-  height: 100%;
-  padding: 2px 5px;
-}
-.search-submit {
+.searcharea {
+  position: relative;
   display: block;
-  width: 80px;
-  height: 35px;
-  font-size: 0.9em;
+  width: 50%;
+}
+.searcharea::before {
+  content: "\e904";
+  font-family: "icomoon";
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1;
+  height: 1em;
+  bottom: 0;
+  margin: auto;
+}
+input:not([type="checkbox"]):not([type="radio"]).searchtxt {
+  border: none;
+  display: block;
+  font-size: 17px;
+  padding: 0.3em 0.5em;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 /*============= #pagination =============*/
 .pagination {
@@ -535,6 +543,30 @@ textarea {
 }
 .entry-content > p > strong {
   font-weight: bold;
+}
+/* ------ option ------ */
+.memo-block {
+  border: 1px solid #dbdbdb;
+  padding: 1em 1.5em;
+}
+/* ------ option ------ */
+.wp-block-mnzkblk-txtbox2-block {
+  background: #f4f4f4;
+  padding: 0.5em 1em;
+}
+.innerttl,
+.innertxt {
+  font-size: 0.9em;
+}
+.innerttl {
+  font-weight: bold;
+  padding: 0.5em 0 0.7em;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5em;
+}
+.innertxt {
+  font-size: 0.9em;
+  padding: 0.5em 0;
 }
 /* ------ option ------ */
 .wp-block-embed-wordpress {
@@ -658,16 +690,15 @@ textarea {
 .entry-content > ul,
 .entry-content > ol {
   width: 100%;
-  padding: 15px 35px;
+  padding: 0 1.5em;
   margin: 2em auto;
-  background-color: #f4f4f4;
 }
 .entry-content > ul li ul,
 .entry-content > ol li ol {
   padding-left: 1.5em;
 }
 .entry-content ul:not(.entry-header-list) li {
-  list-style: disc;
+  list-style: inside "- ";
 }
 .entry-content ol li {
   list-style: decimal;
@@ -717,6 +748,7 @@ textarea {
   background-color: #222;
   color: #fff;
 }
+.wp-block-table thead th:not(:last-child),
 .entry-content table td:not(:last-child) {
   border-right: 1px solid #eee;
 }
@@ -1487,6 +1519,80 @@ input:not([type="checkbox"]):not([type="radio"]).wpcf7-submit {
     font-weight: bold;
     font-size: 1.3rem;
   }
+  /* ------ option ------ */
+  .search__btn .icon-search:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .main-navigation .icon-search {
+    display: block;
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 0.5em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .header-searchbox {
+    position: fixed;
+    margin-bottom: 0;
+    right: 0;
+    top: 0;
+    background-color: #222;
+    z-index: 2;
+    width: 0;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+  }
+  .header-searchbox.is-active {
+    width: 350px;
+  }
+  .searchform {
+    margin-bottom: 0;
+    width: 80%;
+    -webkit-transition: all 0.5s 0.2s;
+    transition: all 0.5s 0.2s;
+    opacity: 0;
+  }
+  input:not([type="checkbox"]):not([type="radio"]).searchtxt {
+    width: 80%;
+    font-size: 15px;
+  }
+  .header-searchbox.is-active .searchform {
+    opacity: 1;
+  }
+  .searcharea::before {
+    color: #fff;
+    right: auto;
+    left: -1.6em;
+  }
+  .searcharea {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .search__close {
+    display: block;
+    color: #fff;
+    width: 20%;
+    text-align: right;
+    line-height: 1;
+    height: 1em;
+    font-size: 1.5em;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .search__close:hover {
+    color: #ccc;
+    font-size: 2.2em;
+    cursor: pointer;
+  }
 
   /*=====================================
   home
@@ -1585,8 +1691,8 @@ input:not([type="checkbox"]):not([type="radio"]).wpcf7-submit {
     font-size: 3em;
   }
   /* ------ option ------ */
-  .contents-area.page-area {
-    width: 50%;
+  .page-area {
+    width: 60%;
     padding-right: 10%;
     margin-left: auto;
     max-width: 800px;
@@ -1682,18 +1788,15 @@ input:not([type="checkbox"]):not([type="radio"]).wpcf7-submit {
   .wp-block-button__link:hover {
     opacity: 0.6;
   }
-
   /*============= #pager =============*/
   [class^="pager-item--"] .pager-item__link:hover {
     background-color: #f4f4f4;
   }
-
   .pager-item--prev .pager-item__link:hover::before {
-    left: 7px;
+    left: -3px;
   }
-
   .pager-item--next .pager-item__link:hover::after {
-    right: 7px;
+    right: -3px;
   }
 
   /*============= #entry-item =============*/
@@ -1777,6 +1880,7 @@ input:not([type="checkbox"]):not([type="radio"]).wpcf7-submit {
   .sharebtn-list > li > a:hover {
     background-color: #222;
     color: #fff;
+    border-color: #222;
   }
   /*============= #go_top =============*/
   .go_top > a {

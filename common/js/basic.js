@@ -47,6 +47,21 @@ $(function () {
 		$(".header-btm").stop().toggleClass("is-active");
 		$("body").stop().toggleClass("oh-open");
 	});
+	// PC,Search,  .main-navigation .icon-search
+	// console.log(display_mode);
+	$(".icon-search").click(function () {
+		if ((display_mode = "w")) {
+			$(".header-searchbox").stop().toggleClass("is-active");
+			$("body").stop().toggleClass("search-open");
+		}
+	});
+	// search__close
+	$(".search__close").click(function () {
+		if ((display_mode = "w")) {
+			$(".header-searchbox").stop().removeClass("is-active");
+			$("body").stop().removeClass("search-open");
+		}
+	});
 });
 /* ---------------------- DOM_load ---------------------- */
 $(window).on("load", function () {
@@ -71,14 +86,12 @@ $(function() {
 });
 $(window).on("load scroll", function () {
 	var headNav = $("#masthead");
-	$(window).on("load scroll", function () {
-		if ($(this).scrollTop() > 50 && headNav.hasClass("fixed") == false) {
-			headNav.addClass("fixed");
-			$("#page").addClass("header_fix");
-		} else if ($(this).scrollTop() < 50 && headNav.hasClass("fixed") == true) {
-			$("#page").removeClass("header_fix");
+	if ($(this).scrollTop() > 50 && headNav.hasClass("fixed") == false) {
+		headNav.addClass("fixed");
+		$("#page").addClass("header_fix");
+	} else if ($(this).scrollTop() < 50 && headNav.hasClass("fixed") == true) {
+		$("#page").removeClass("header_fix");
 
-			headNav.removeClass("fixed");
-		}
-	});
+		headNav.removeClass("fixed");
+	}
 });

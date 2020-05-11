@@ -26,7 +26,7 @@ $search_query = get_search_query();
                 if ($total_results > 0) {
                     get_template_part('tpl/newslist', 'newslist');
                 } else {
-                    echo '見つかりませんでした。<br>他のキーワードでの検索をお試しください。';
+                    echo 'Not found...';
                 }
                 ?>
             </div>
@@ -37,7 +37,7 @@ $search_query = get_search_query();
     </div><!-- #wrapper -->
     <div class="breadcrumb">
         <ul class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="<?php echo home_url('/'); ?>">home</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo home_url('/'); ?>">Home</a></li>
             <li class="breadcrumb-item"><?=$search_query;?>の検索結果</li>
         </ul>
     </div><!-- /.breadcrumb -->

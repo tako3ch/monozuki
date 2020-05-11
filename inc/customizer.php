@@ -22,11 +22,11 @@ function mnzk_design_register($wp_customize) {
 		'section' => 'mnzk_design_sec',
 		'type'       => 'radio',
 		'choices'    => array(
-			'default' => 'デフォルト',
+			'default' => 'default',
 			'yami' => 'yami',
 		)
 	));
-	// color_change
+	// ロゴサイズ変更
 	$wp_customize->add_setting('mnzk_logosize', array(
 		'type' => 'option',
 		'default'   => 'default',
@@ -40,6 +40,21 @@ function mnzk_design_register($wp_customize) {
 			'small' => 'Small',
 			'default' => 'Normal',
 			'big' => 'Big',
+		)
+	));
+	// 検索ボックスの表示
+	$wp_customize->add_setting('mnzk_searchbox', array(
+		'type' => 'option',
+		'default'   => 'default',
+	));
+	$wp_customize->add_control( 'mnzk_searchbox', array(
+		'settings' => 'mnzk_searchbox',
+		'label' => '検索ボックス表示',
+		'section' => 'mnzk_design_sec',
+		'type'       => 'radio',
+		'choices'    => array(
+			'default' => 'None',
+			'show' => 'Show',
 		)
 	));
 }
