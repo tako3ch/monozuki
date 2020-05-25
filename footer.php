@@ -33,7 +33,7 @@
 
 <?php wp_footer(); wp_reset_query(); ?>
 <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-<?php if (is_single()) {echo '<script src="' . get_template_directory_uri() . '/common/js/slider.js?v2"></script>';} ?>
+<?php if (is_single()) {echo '<script src="' . get_template_directory_uri() . '/common/js/slider.js?v3"></script>';} ?>
 <?php if (is_page_template('single-column.php')) {echo '<script src="' . get_template_directory_uri() . '/common/js/column.js"></script>';} ?>
 </body>
 </html>

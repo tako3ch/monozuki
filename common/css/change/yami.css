@@ -20,7 +20,8 @@ site-header
 /*=====================================
 basic
 =====================================*/
-.header-btm {
+.header-btm,
+.pagination-list__item.pagination-list__item--active .pagination__link {
 	color: #fff;
 }
 .ham__menu-item {
@@ -39,7 +40,8 @@ basic
 	}
 	.main-navigation .menu-item.current-post-ancestor a,
 	.main-navigation .menu-item.current-menu-item a,
-	.main-navigation .menu-item:hover a {
+	.main-navigation .menu-item:hover a,
+	[class^="pager-item--"] .pager-item__link:hover {
 		color: #222;
 	}
 }

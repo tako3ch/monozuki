@@ -18,6 +18,10 @@ DIY
 
 # version
 
+### v0.1.5
+
+- [fixed] design_iroiro
+
 ### v0.1.2
 
 - [add] SearchForm

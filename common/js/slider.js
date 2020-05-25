@@ -23,5 +23,10 @@ $(function () {
 		slidesToShow: 4,
 		asNavFor: $slider,
 		focusOnSelect: true,
+		arrows: true,
+		prevArrow:
+			'<a class="slick-prev" href="#"><i class="icon-keyboard_arrow_left"></i></a>',
+		nextArrow:
+			'<a class="slick-next" href="#"><i class="icon-keyboard_arrow_right"></i></a>',
 	});
 });

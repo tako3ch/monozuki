@@ -19,9 +19,6 @@ get_header();
 			}
 			wp_reset_query();
 			?>
-
-
-
 		</div>
 
 
